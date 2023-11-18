@@ -3,6 +3,8 @@ import * as Styled from './styles'
 import {useBlueManager} from './hooks'
 import {ModalDevices} from '../../components'
 import {ModalChartReadAccelerometer} from '../../components/ModalChartReadAccelerometer'
+import LottieView from 'lottie-react-native'
+import UserAnalitics from '../../assets/UserAnalitics.json'
 
 export const BluetoothConnection = () => {
   const {
@@ -12,14 +14,26 @@ export const BluetoothConnection = () => {
     isModalDevicesVisible,
     connectToDevice,
     isModalReadDataVisible,
-    dataRead,
+    dataReadAxiosX,
+    dataReadAxiosY,
+    dataReadAxiosZ,
     hideModal,
   } = useBlueManager()
 
   return (
     <Styled.ContainerMaster>
       <Styled.ScrollView>
-        <Styled.Title>Nome do Grupo</Styled.Title>
+        <Styled.Title>Sensor de vibração</Styled.Title>
+        <Styled.ContainerUserAnalitics>
+          <LottieView
+            source={UserAnalitics}
+            autoPlay
+            loop
+            style={{height: 300, width: 300}}
+            speed={0.5}
+          />
+        </Styled.ContainerUserAnalitics>
+
         <Styled.ContainerButton>
           <Styled.Button>
             <Styled.TextButton onPress={openModal}>
@@ -36,7 +50,9 @@ export const BluetoothConnection = () => {
       />
       <ModalChartReadAccelerometer
         closeConnection={disconnectFromDevice}
-        data={dataRead}
+        dataAxioY={dataReadAxiosY}
+        dataAxioX={dataReadAxiosX}
+        dataAxioZ={dataReadAxiosZ}
         isVisible={isModalReadDataVisible}
       />
     </Styled.ContainerMaster>

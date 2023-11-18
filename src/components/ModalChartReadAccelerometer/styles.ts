@@ -5,7 +5,7 @@ export const ContainerMaster = styled.Modal`
   padding: 10px;
 `
 
-export const SubContainer = styled.View`
+export const SubContainer = styled.ScrollView`
   padding: 20px;
 `
 
@@ -25,7 +25,8 @@ export const ContainerButton = styled.TouchableOpacity`
   justify-items: center;
   align-items: center;
   margin-bottom: 30px;
-  margin-top: 250px;
+  margin-top: 30px;
+  margin-bottom: 60px;
 `
 export const ContainerTextDescription = styled.View`
   display: flex;
@@ -49,4 +50,17 @@ export const TextButton = styled.Text`
   text-align: center;
   margin-top: 12px;
   color: #fff;
+`
+
+export const ContainerGraphic = styled.View`
+  border: 1px solid #627de2;
+  padding: 12px;
+  margin-top: 50px;
+  border-radius: 20px;
+`
+
+export const TitleGraphic = styled.Text`
+  text-align: center;
+  color: #000000;
+  font-size: 20px;
 `

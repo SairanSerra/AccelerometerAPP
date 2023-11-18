@@ -1,5 +1,7 @@
 export type ModalChartReadAccelerometerProps = {
-  data: number[]
+  dataAxioX: number[]
+  dataAxioY: number[]
+  dataAxioZ: number[]
   isVisible: boolean
   closeConnection: () => void
 }

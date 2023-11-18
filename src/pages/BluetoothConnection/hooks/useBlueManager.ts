@@ -23,7 +23,9 @@ export const useBlueManager = () => {
     useState<boolean>(false)
   const [isModalReadDataVisible, setIsModalReadDataVisible] =
     useState<boolean>(false)
-  const [dataRead, setDataRead] = useState<number[]>([])
+  const [dataReadAxiosX, setDataReadAxiosX] = useState<number[]>([])
+  const [dataReadAxiosY, setDataReadAxiosY] = useState<number[]>([])
+  const [dataReadAxiosZ, setDataReadAxiosZ] = useState<number[]>([])
 
   const scanForDevices = () => {
     requestPermissions((isGranted) => {
@@ -118,7 +120,9 @@ export const useBlueManager = () => {
       bleManager.cancelDeviceConnection(connectedDevice.id)
       setConnectedDevice(null)
       setIsModalReadDataVisible(false)
-      setDataRead([])
+      setDataReadAxiosX([])
+      setDataReadAxiosY([])
+      setDataReadAxiosZ([])
     }
   }
 
@@ -140,7 +144,9 @@ export const useBlueManager = () => {
     const axiosY = Number(separateData[1])
     const axiosZ = Number(separateData[2])
 
-    setDataRead((state) => [...state, axiosX])
+    setDataReadAxiosX((state) => [...state, axiosX])
+    setDataReadAxiosY((state) => [...state, axiosY])
+    setDataReadAxiosZ((state) => [...state, axiosZ])
   }
 
   const startStreamingData = async (device: Device) => {
@@ -168,6 +174,8 @@ export const useBlueManager = () => {
     openModal,
     isModalDevicesVisible,
     isModalReadDataVisible,
-    dataRead,
+    dataReadAxiosX,
+    dataReadAxiosY,
+    dataReadAxiosZ,
   }
 }

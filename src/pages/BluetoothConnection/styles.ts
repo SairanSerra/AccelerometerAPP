@@ -39,10 +39,16 @@ export const ContainerButton = styled.View`
   justify-items: center;
   align-self: center;
   width: 70%;
-  margin-top: 90%;
+  margin-top: 50%;
+  margin-bottom: 30px;
 `
 
 export const ContainerDevicesToConnect = styled.View`
   margin-top: 70px;
   padding: 30px;
+`
+export const ContainerUserAnalitics = styled.View`
+  align-items: center;
+  justify-items: center;
+  margin-top: 130px;
 `
