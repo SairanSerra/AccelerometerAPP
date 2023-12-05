@@ -5,6 +5,8 @@ import {ModalDevices} from '../../components'
 import {ModalChartReadAccelerometer} from '../../components/ModalChartReadAccelerometer'
 import LottieView from 'lottie-react-native'
 import UserAnalitics from '../../assets/UserAnalitics.json'
+import Toast, {ToastConfigParams} from 'react-native-toast-message'
+import CustomToast from '../../../src/components/Toast'
 
 export const BluetoothConnection = () => {
   const {
@@ -50,8 +52,8 @@ export const BluetoothConnection = () => {
       />
       <ModalChartReadAccelerometer
         closeConnection={disconnectFromDevice}
-        dataAxioY={dataReadAxiosY}
         dataAxioX={dataReadAxiosX}
+        dataAxioY={dataReadAxiosY}
         dataAxioZ={dataReadAxiosZ}
         isVisible={isModalReadDataVisible}
       />
